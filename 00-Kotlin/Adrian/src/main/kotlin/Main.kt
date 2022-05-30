@@ -88,6 +88,18 @@ fun main() {
         }
     println(respuestaForEach)
 
+    // MAP -> Muta el arreglo (Cambia el arreglo)
+    // 1) Enviemos el nuevo valor de la iteracion
+    // 2) Nos devuelve es un NUEVO ARREGLO con los valores modificados
+
+    val respuestaMap: List<Double> = arregloDinamico
+        .map { valorActual: Int ->
+            return@map valorActual.toDouble() + 100.00
+        }
+
+    println(respuestaMap)
+
+
 }
 
 // void imprimirNombre(String nombre){}
