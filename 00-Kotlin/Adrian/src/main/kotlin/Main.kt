@@ -71,6 +71,23 @@ fun main() {
     arregloDinamico.add(12)
     println(arregloDinamico)
 
+    // OPERADORES -> Sirven para los arreglos estáticos y dinámicos
+
+
+    // FOR EACH -> Unit
+    // Iterar un arreglo
+
+    val respuestaForEach: Unit = arregloDinamico
+        .forEach {
+                valorActual: Int ->
+            println("Valor actual: ${valorActual}")
+        }
+    arregloDinamico
+        .forEachIndexed { indice: Int, valorActual: Int ->
+            println("Valor ${valorActual} Indice: ${indice}")
+        }
+    println(respuestaForEach)
+
 }
 
 // void imprimirNombre(String nombre){}
