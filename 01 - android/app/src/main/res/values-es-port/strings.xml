@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">movcompvaes2022a</string>
+    <string name="saludo">es port</string>
+    <color name="color_texto">#2196F3</color>
+    <color name="color_fondo">#FF5722</color>
+</resources>

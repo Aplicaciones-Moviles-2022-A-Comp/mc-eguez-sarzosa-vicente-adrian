@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">movcompvaes2022a</string>
+    <string name="saludo">en land</string>
+    <color name="color_texto">#3F51B5</color>
+    <color name="color_fondo">#FFEB3B</color>
+</resources>
