@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 irActividad(ACicloVida::class.java)
             }
+        val botonListView = findViewById<Button>(R.id.btn_ir_list_view)
+        botonListView
+            .setOnClickListener {
+                irActividad(BListView::class.java)
+            }
 
 //        val botonCicloVida2 = findViewById<TextView>(R.id.btn_ciclo_vida)
 //        botonCicloVida2.text = "HOLA"
