@@ -63,6 +63,17 @@
         app:layout_constraintStart_toStartOf="@+id/btn_intent" />
 
     <Button
+        android:id="@+id/btn_ir_firebase"
+        android:layout_width="108dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="28dp"
+        android:text="Firebase"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sqlite"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sqlite"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_sqlite" />
+
+    <Button
         android:id="@+id/btn_ir_intent_implicito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,6 +82,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_intent"
         app:layout_constraintStart_toEndOf="@+id/btn_intent"
         app:layout_constraintTop_toTopOf="@+id/btn_intent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_revcycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="Recycler"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sqlite"
+        app:layout_constraintStart_toEndOf="@+id/btn_sqlite"
+        app:layout_constraintTop_toTopOf="@+id/btn_sqlite"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
