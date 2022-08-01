@@ -28,35 +28,54 @@ class IFirebaseFirestore : AppCompatActivity() {
         val botonDatosPrueba = findViewById<Button>(R.id.btn_fs_datos_prueba)
         botonDatosPrueba.setOnClickListener { crearDatosPrueba() }
         val botonOrderBy = findViewById<Button>(R.id.btn_fs_order_by)
+        val db = Firebase.firestore
+        val citiesRefUnico = db
+            .collection("cities")
         botonOrderBy.setOnClickListener {
-            val db = Firebase.firestore
-            val citiesRefUnico = db
-                .collection("cities")
+            citiesRefUnico
                 .orderBy("population") // NO USAMOS CON DOCUMENT xq en DOCUMENT nos devuelve 1
                 .get()
                 .addOnSuccessListener {
                     arreglo = arrayListOf()
-                    for (ciudad in it){
+                    for (ciudad in it) {
                         anadirAArregloCiudad(arreglo, ciudad)
                     }
                     adaptador.notifyDataSetChanged()
                 }
         }
+        val botonObtenerDocumento = findViewById<Button>(R.id.btn_fs_odoc)
+        botonObtenerDocumento.setOnClickListener {
+            citiesRefUnico
+                .document("BJ")
+                .get()
+                .addOnSuccessListener {
+                    arreglo = arrayListOf()
+                    arreglo.add(
+                        ICitiesDto(
+                            it.get("name") as String?, it.get("state") as String?,
+                            it.get("country") as String?, it.get("capital") as Boolean?,
+                            it.get("population") as Integer?, it.get("regions") as ArrayList<String>
+                        )
+                    )
+                    adaptador.notifyDataSetChanged()
+                }
+        }
     }
+
     fun anadirAArregloCiudad(
         arregloNuevo: ArrayList<ICitiesDto>,
         ciudad: QueryDocumentSnapshot
-    ){
+    ) {
         arregloNuevo.add(
             ICitiesDto(
                 ciudad.get("name") as String?, ciudad.get("state") as String?,
-                ciudad.get("country")  as String?,ciudad.get("capital")  as Boolean?,
-                ciudad.get("population")  as Integer?, ciudad.get("regions") as ArrayList<String>
-                )
+                ciudad.get("country") as String?, ciudad.get("capital") as Boolean?,
+                ciudad.get("population") as Integer?, ciudad.get("regions") as ArrayList<String>
+            )
         )
     }
 
-    fun crearDatosPrueba(){
+    fun crearDatosPrueba() {
         val db = Firebase.firestore
 
         val cities = db.collection("cities")
