@@ -51,7 +51,7 @@ class IFirebaseFirestore : AppCompatActivity() {
             ICitiesDto(
                 ciudad.get("name") as String?, ciudad.get("state") as String?,
                 ciudad.get("country")  as String?,ciudad.get("capital")  as Boolean?,
-                ciudad.get("population")  as Integer?, ciudad.get("regions") as ArrayList<String>
+                ciudad.get("population")  as Long?, ciudad.get("regions") as ArrayList<String>
                 )
         )
     }
