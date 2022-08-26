@@ -106,4 +106,15 @@
         app:layout_constraintTop_toTopOf="@+id/btn_ir_firebase"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/btn_google_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Google maps"
+        app:layout_constraintEnd_toEndOf="@+id/tv_mensaje"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="@+id/tv_mensaje"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mensaje" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
